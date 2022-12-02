@@ -13,20 +13,20 @@ const navigationEvents = (user) => {
     getWords(user.uid).then(showWords);
   });
 
-  document.querySelector('#javascript').addEventListener('click', () => {
-    getWords(user.uid).then(showWords);
-  });
+  // document.querySelector('#javascript').addEventListener('click', () => {
+  //   getWords(user.uid).then(showWords);
+  // });
 
-  document.querySelector('#html').addEventListener('click', () => {
-    getWords(user.uid).then(showWords);
-  });
+  // document.querySelector('#html').addEventListener('click', () => {
+  //   getWords(user.uid).then(showWords);
+  // });
 
-  document.querySelector('#css').addEventListener('click', () => {
-    getWords(user.uid).then(showWords);
-  });
+  // document.querySelector('#css').addEventListener('click', () => {
+  //   getWords(user.uid).then(showWords);
+  // });
 
   document.querySelector('#favoriteWords').addEventListener('click', () => {
-    // first get the author, THEN SHOW authors
+    // first get the words, THEN SHOW words
     filterWords(user.uid).then(showWords);
     // console.warn('whats up');
   });
