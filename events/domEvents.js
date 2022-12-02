@@ -11,7 +11,7 @@ const domEvents = (user) => {
         const [, firebaseKey] = e.target.id.split('--');
 
         deleteWords(firebaseKey).then(() => {
-          getWords(user.uid).then(showWords); // we call it inside of delete book cause it needs to go in sequence
+          getWords(user.uid).then(showWords); // we call it inside of delete words cause it needs to go in sequence
         });
       }
     }

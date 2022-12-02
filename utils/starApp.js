@@ -1,4 +1,4 @@
-import getWords from '../api/wordsData';
+import { getWords } from '../api/wordsData';
 import { showWords } from '../pages/viewWords';
 import domBuilder from '../shared/domBuilder';
 import navBar from '../shared/navBar';
@@ -16,7 +16,7 @@ const startApp = (user) => {
   navigationEvents(user); // ATTACH THE EVENT LISTENERS TO THE NAVBAR
 
   // Put all words on the DOM on App load
-  getWords(user.uid).then((books) => showWords(books));
+  getWords(user.uid).then((words) => showWords(words));
   // whatever you resolve is returned at .then(taco)
 };
 

@@ -1,4 +1,4 @@
-import renderToDOM from '../utils/sample_data/renderToDom';
+import renderToDOM from '../utils/renderToDom';
 
 const navBar = () => {
   const domString = `
