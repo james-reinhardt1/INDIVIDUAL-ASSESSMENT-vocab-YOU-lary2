@@ -1,5 +1,6 @@
-import { deleteWords, getWords } from '../api/wordsData';
+import { deleteWords, getSingleWord, getWords } from '../api/wordsData';
 import viewWords from '../pages/viewWords';
+import addWordsForm from '../forms/addWordsForm';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -14,6 +15,18 @@ const domEvents = () => {
           getWords().then(viewWords); // we call it inside of delete words cause it needs to go in sequence
         });
       }
+    }
+    // CLICK EVENT FOR SHOWING FORM FOR ADDING A WORD
+    if (e.target.id.includes('add-words-btn')) {
+      addWordsForm();
+    }
+    // CLICK EVENT EDITING/UPDATING A WORD
+    if (e.target.id.includes('edit-words-btn')) {
+      // console.warn('EDIT BOOK', e.target.id);
+      // console.warn(e.target.id.split('--'));
+      const [, firebaseKey] = e.target.id.split('--');
+
+      getSingleWord(firebaseKey).then((bookObj) => addWordsForm(bookObj));
     }
   });
 };
