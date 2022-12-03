@@ -1,17 +1,17 @@
 import { getWords } from '../api/wordsData';
 import renderToDOM from '../utils/renderToDom';
 
-// Add UID in selectAuthor and getAuthors
-const selectWords = () => {
-  let domString = `<label for="author">Select an Author</label>
-    <select class="form-control" id="author_id" required>
-    <option value="">Select an Author</option>`;
+// Add UID in selectWords and getWords
+const selectLanguage = () => {
+  let domString = `<label for="language">Select an Language</label>
+    <select class="form-control" id="language" required>
+    <option value="">Select an Language</option>`;
 
   getWords().then((wordsArray) => {
-    wordsArray.forEach((words) => {
+    wordsArray.forEach((vocabWords) => {
       domString += `
           <option 
-            value="${words.firebaseKey}" : ''}>
+            value="${vocabWords.firebaseKey}"  : ''}>
           </option>`;
     });
 
@@ -21,4 +21,4 @@ const selectWords = () => {
   });
 };
 
-export default selectWords;
+export default selectLanguage;

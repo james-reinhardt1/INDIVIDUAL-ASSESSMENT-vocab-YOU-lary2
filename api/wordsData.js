@@ -74,8 +74,8 @@ const getSingleWord = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const filterWords = (uid) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocabWords.json?orderBy="uid"&equalTo="${uid}"`, {
+const filterWords = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabWords.json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

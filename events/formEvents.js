@@ -10,7 +10,6 @@ const formEvents = () => {
         title: document.querySelector('#title').value,
         language: document.querySelector('#language').value,
         definition: document.querySelector('#definition').value,
-        dateSubmitted: document.querySelector('#dateSubmitted').value,
         favorite: document.querySelector('#favorite').checked,
       };
 
@@ -32,7 +31,6 @@ const formEvents = () => {
         title: document.querySelector('#title').value,
         language: document.querySelector('#language').value,
         definition: document.querySelector('#definition').value,
-        dateSubmitted: document.querySelector('#dateSubmitted').value,
         favorite: document.querySelector('#favorite').checked,
         firebaseKey
       };
