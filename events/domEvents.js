@@ -1,7 +1,7 @@
 import { deleteWords, getWords } from '../api/wordsData';
-import { showWords } from '../pages/viewWords';
+import viewWords from '../pages/viewWords';
 
-const domEvents = (user) => {
+const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     // CLICK EVENT FOR DELETING A WORD
     if (e.target.id.includes('delete-word')) {
@@ -11,7 +11,7 @@ const domEvents = (user) => {
         const [, firebaseKey] = e.target.id.split('--');
 
         deleteWords(firebaseKey).then(() => {
-          getWords(user.uid).then(showWords); // we call it inside of delete words cause it needs to go in sequence
+          getWords().then(viewWords); // we call it inside of delete words cause it needs to go in sequence
         });
       }
     }

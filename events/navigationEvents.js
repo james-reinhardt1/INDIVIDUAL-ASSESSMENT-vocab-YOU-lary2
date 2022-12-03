@@ -1,16 +1,16 @@
 import { getWords, filterWords } from '../api/wordsData';
-import { showWords } from '../pages/viewWords';
+import viewWords from '../pages/viewWords';
 import { signOut } from '../utils/auth';
 
 // navigation events
-const navigationEvents = (user) => {
+const navigationEvents = () => {
   // LOGOUT BUTTON
   document.querySelector('#logout-button')
     .addEventListener('click', signOut);
 
   // ALL WORDS
   document.querySelector('#all-words').addEventListener('click', () => {
-    getWords(user.uid).then(showWords);
+    getWords().then(viewWords);
   });
 
   // document.querySelector('#javascript').addEventListener('click', () => {
@@ -27,7 +27,7 @@ const navigationEvents = (user) => {
 
   document.querySelector('#favoriteWords').addEventListener('click', () => {
     // first get the words, THEN SHOW words
-    filterWords(user.uid).then(showWords);
+    filterWords().then(viewWords);
     // console.warn('whats up');
   });
 };

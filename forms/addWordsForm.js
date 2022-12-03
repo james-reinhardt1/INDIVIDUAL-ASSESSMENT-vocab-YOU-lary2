@@ -3,7 +3,7 @@ import renderToDOM from '../utils/renderToDom';
 import selectWords from './selectWordsForm';
 
 // USING THIS FORM FOR BOTH CREATE AND UPDATE
-const addWordsForm = (user, obj = {}) => {
+const addWordsForm = (obj = {}) => {
   clearDom();
   const domString = `
     <form id="${obj.firebaseKey ? `update-words--${obj.firebaseKey}` : 'submit-words'}" class="mb-4">
@@ -34,7 +34,7 @@ const addWordsForm = (user, obj = {}) => {
     </form>`;
 
   renderToDOM('#form-container', domString);
-  selectWords(user, `${obj.firebaseKey || ''}`);
+  selectWords(`${obj.firebaseKey || ''}`);
 };
 
 export default addWordsForm;
