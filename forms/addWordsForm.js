@@ -1,6 +1,6 @@
 import clearDom from '../utils/clearDom';
 import renderToDOM from '../utils/renderToDom';
-import selectWords from './selectWordsForm';
+import selectLanguage from './selectLanguageForm';
 
 // USING THIS FORM FOR BOTH CREATE AND UPDATE
 const addWordsForm = (obj = {}) => {
@@ -15,7 +15,7 @@ const addWordsForm = (obj = {}) => {
         <label for="description">Definition</label>
         <textarea class="form-control" placeholder="Word Definition" id="definition" style="height: 100px">${obj.definition || ''}</textarea>
       </div>
-      <div class="form-group" id="select-words">
+      <div class="form-group" id="select-language">
       </div>
       <div class="form-check">
         <input type="checkbox" class="form-check-input" id="favorite" ${obj.favorite ? 'checked' : ''}>
@@ -26,7 +26,7 @@ const addWordsForm = (obj = {}) => {
     </form>`;
 
   renderToDOM('#form-container', domString);
-  selectWords(`${obj.firebaseKey || ''}`);
+  selectLanguage(`${obj.languageId || ''}`);
 };
 
 export default addWordsForm;

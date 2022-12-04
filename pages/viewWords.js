@@ -18,9 +18,9 @@ const viewWords = (array) => {
       <div class="card">
         <div class="card-body" style="height: 180px;">
           <h4 class="card-title">${item.title}</h4>
-            <h5 class="card-title">${item.language}</h5>
             <h6 class="card-title">${item.definition}</h6>
-            <p class="card-text bold">${item.favorite ? `<span class="badge badge-info sale-badge"><i class="fa fa-bell" aria-hidden="true"></i> Favorite</span> $${item.dateSubmitted}` : `$${item.dateSubmitted}`}</p>
+            <p class="card-text bold">${item.time ? `<span class="badge badge-info sale-badge"><i class="fa fa-bell" aria-hidden="true"></i> Favorite</span></p>
+            <p> ${item.dateSubmitted}` : `${item.dateSubmitted}`}</p> 
             <hr>
             <i class="btn btn-success fas fa-eye" id="view-words-btn--${item.firebaseKey}"></i>
             <i id="edit-words-btn--${item.firebaseKey}" class="fas fa-edit btn btn-info"></i>

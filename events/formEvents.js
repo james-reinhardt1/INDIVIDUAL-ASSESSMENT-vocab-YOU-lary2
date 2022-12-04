@@ -8,9 +8,11 @@ const formEvents = () => {
     if (e.target.id.includes('submit-word')) {
       const payload = {
         title: document.querySelector('#title').value,
-        language: document.querySelector('#language').value,
+        // eslint-disable-next-line radix
+        languageId: parseInt(document.querySelector('#languageId').value), // id from selectLanguage function
+        language: 'true',
         definition: document.querySelector('#definition').value,
-        favorite: document.querySelector('#favorite').checked,
+        dateSubmitted: new Date()
       };
 
       createWords(payload).then(({ name }) => {
