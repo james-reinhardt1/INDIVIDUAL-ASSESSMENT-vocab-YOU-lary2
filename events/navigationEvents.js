@@ -1,3 +1,4 @@
+import { getWordsByLanguage } from '../api/languageData';
 import { getWords, filterWords } from '../api/wordsData';
 import viewWords from '../pages/viewWords';
 import { signOut } from '../utils/auth';
@@ -13,17 +14,17 @@ const navigationEvents = () => {
     getWords().then(viewWords);
   });
 
-  // document.querySelector('#javascript').addEventListener('click', () => {
-  //   getWords(user.uid).then(showWords);
-  // });
+  document.querySelector('#javascript').addEventListener('click', () => {
+    getWordsByLanguage(1).then(viewWords);
+  });
 
-  // document.querySelector('#html').addEventListener('click', () => {
-  //   getWords(user.uid).then(showWords);
-  // });
+  document.querySelector('#html').addEventListener('click', () => {
+    getWordsByLanguage(3).then(viewWords);
+  });
 
-  // document.querySelector('#css').addEventListener('click', () => {
-  //   getWords(user.uid).then(showWords);
-  // });
+  document.querySelector('#css').addEventListener('click', () => {
+    getWordsByLanguage(2).then(viewWords);
+  });
 
   document.querySelector('#favoriteWords').addEventListener('click', () => {
     // first get the words, THEN SHOW words
