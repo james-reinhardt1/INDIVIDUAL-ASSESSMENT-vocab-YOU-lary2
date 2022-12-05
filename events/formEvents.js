@@ -1,7 +1,7 @@
 import { createWords, getWords, updateWords } from '../api/wordsData';
 import viewWords from '../pages/viewWords';
 
-const formEvents = () => {
+const formEvents = (user) => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
     // CLICK EVENT FOR SUBMITTING FORM FOR ADDING A WORD
@@ -12,14 +12,15 @@ const formEvents = () => {
         languageId: parseInt(document.querySelector('#languageId').value), // id from selectLanguage function
         language: 'true',
         definition: document.querySelector('#definition').value,
-        dateSubmitted: new Date()
+        dateSubmitted: new Date(),
+        uid: user.id
       };
 
       createWords(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
 
         updateWords(patchPayload).then(() => {
-          getWords().then(viewWords);
+          getWords(user.uid).then(viewWords);
         });
       });
     }
@@ -31,14 +32,14 @@ const formEvents = () => {
       console.warn(firebaseKey);
       const payload = {
         title: document.querySelector('#title').value,
-        language: document.querySelector('#language').value,
+        language: document.querySelector('#languageId').value,
         definition: document.querySelector('#definition').value,
         favorite: document.querySelector('#favorite').checked,
         firebaseKey
       };
 
       updateWords(payload).then(() => {
-        getWords().then(viewWords);
+        getWords(user.uid).then(viewWords);
       });
     }
   });

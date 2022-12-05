@@ -3,7 +3,7 @@ import renderToDOM from '../utils/renderToDom';
 import selectLanguage from './selectLanguageForm';
 
 // USING THIS FORM FOR BOTH CREATE AND UPDATE
-const addWordsForm = (obj = {}) => {
+const addWordsForm = (uid, obj = {}) => {
   clearDom();
   const domString = `
     <form id="${obj.firebaseKey ? `update-words--${obj.firebaseKey}` : 'submit-words'}" class="mb-4">
@@ -26,7 +26,7 @@ const addWordsForm = (obj = {}) => {
     </form>`;
 
   renderToDOM('#form-container', domString);
-  selectLanguage(`${obj.languageId || ''}`);
+  selectLanguage(uid, `${obj.languageId || ''}`);
 };
 
 export default addWordsForm;

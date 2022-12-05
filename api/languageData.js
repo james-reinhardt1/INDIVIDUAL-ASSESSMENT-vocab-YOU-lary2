@@ -2,21 +2,28 @@ import client from '../utils/client';
 
 const endpoint = client.databaseURL;
 
-const getLanguage = () => new Promise((resolve, reject) => {
+const getLanguage = (uid) => new Promise((resolve, reject) => {
   console.warn('language trigger');
-  fetch(`${endpoint}/language.json`, {
+  fetch(`${endpoint}/language.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
+    .then((data) => {
+      if (data) {
+        resolve(Object.values(data));
+      } else {
+        resolve([]);
+      }
+    })
     .catch(reject);
 });
-
-const getWordsByLanguage = (languageId) => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocabWords.json?orderBy="languageId"&equalTo=${languageId}`, {
+// changed from line 15
+const getWordsByLanguage = (uid) => new Promise((resolve, reject) => {
+  // changed from languageId to uid in paramater in line 24
+  fetch(`${endpoint}/vocabWords.json?orderBy="languageId"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

@@ -3,8 +3,8 @@ import client from '../utils/client';
 const endpoint = client.databaseURL;
 
 // GET WORDS
-const getWords = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocabWords.json`, {
+const getWords = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabWords.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -74,15 +74,18 @@ const getSingleWord = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const filterWords = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocabWords.json`, {
+const filterWords = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocabWords.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
+    .then((data) => {
+      const wordFilter = Object.values(data).filter((item) => item.languageId);
+      resolve(wordFilter);
+    })
     .catch(reject);
 });
 

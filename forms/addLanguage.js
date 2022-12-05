@@ -1,6 +1,6 @@
 import clearDom from '../utils/clearDom';
 import renderToDOM from '../utils/renderToDom';
-import selectLanguage from './selectWordsForm';
+import selectLanguage from './selectLanguageForm';
 
 const addLanguageForm = (obj = {}) => {
   clearDom();
