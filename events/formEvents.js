@@ -10,7 +10,7 @@ const formEvents = (user) => {
         title: document.querySelector('#title').value,
         // eslint-disable-next-line radix
         languageId: parseInt(document.querySelector('#languageId').value), // id from selectLanguage function
-        language: 'true',
+        language: document.querySelector('#select-language').value,
         definition: document.querySelector('#definition').value,
         dateSubmitted: new Date(),
         uid: user.uid
