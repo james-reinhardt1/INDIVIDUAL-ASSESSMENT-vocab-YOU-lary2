@@ -16,15 +16,15 @@ const navigationEvents = (user) => {
   // CHANGING ALL CALLS FROM NUMBERS TO USER.UID
   // THIS STOPPED MY BUTTONS FROM WORKING
   document.querySelector('#javascript').addEventListener('click', () => {
-    getWordsByLanguage(user.uid).then(viewWords);
+    getWordsByLanguage(user.uid, 'javascript').then(viewWords);
   });
 
   document.querySelector('#html').addEventListener('click', () => {
-    getWordsByLanguage(user.uid).then(viewWords);
+    getWordsByLanguage(user.uid, 'html').then(viewWords);
   });
 
   document.querySelector('#css').addEventListener('click', () => {
-    getWordsByLanguage(user.uid).then(viewWords);
+    getWordsByLanguage(user.uid, 'css').then(viewWords);
   });
 
   document.querySelector('#favoriteWords').addEventListener('click', () => {
