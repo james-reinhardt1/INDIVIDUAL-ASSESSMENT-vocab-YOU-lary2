@@ -5,7 +5,7 @@ import renderToDOM from '../utils/renderToDom';
 const selectLanguage = (uid, languageId) => {
   let domString = `<label for="language">Select an Language</label>
     <select class="form-control" id="languageId" required>
-    <option value="">Select an Language</option>`;
+    `;
 
   getLanguage(uid).then((languageArray) => {
     languageArray.forEach((language) => {

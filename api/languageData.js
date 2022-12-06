@@ -21,16 +21,20 @@ const getLanguage = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 // changed from line 15
-const getWordsByLanguage = (uid) => new Promise((resolve, reject) => {
+const getWordsByLanguage = (uid, taco) => new Promise((resolve, reject) => {
   // changed from languageId to uid in paramater in line 24
-  fetch(`${endpoint}/vocabWords.json?orderBy="languageId"&equalTo="${uid}"`, {
+  fetch(`${endpoint}/vocabWords.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
+    .then((data) => (Object.values(data)))
+    .then((array) => array.filter(
+      (vocabObject) => vocabObject.language === taco
+    )) // added another .then promise to filter vocab object
+    .then(resolve)
     .catch(reject);
 });
 export {

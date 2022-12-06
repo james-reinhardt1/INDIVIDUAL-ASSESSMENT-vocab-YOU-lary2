@@ -13,7 +13,7 @@ const formEvents = (user) => {
         language: 'true',
         definition: document.querySelector('#definition').value,
         dateSubmitted: new Date(),
-        uid: user.id
+        uid: user.uid
       };
 
       createWords(payload).then(({ name }) => {
