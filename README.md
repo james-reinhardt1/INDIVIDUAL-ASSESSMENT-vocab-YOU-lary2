@@ -4,7 +4,7 @@
 This app was built to allow users to view pre-rendered vocabulary cards, create new vocabulary cards, and assign a language (html, javascript, or css) to a vocabulary card. Users are also allowed to delete cards and edit cards if they need to.
 
 ## Link to Loom video 
-[Loom video]https://www.loom.com/share/d4bb3ca2e16a46cea191684b2e311cdc
+[Loom video](https://www.loom.com/share/d4bb3ca2e16a46cea191684b2e311cdc)
 
 ## Link to wireframe
 [wireframe](https://docs.google.com/presentation/d/18Enu_me4b7T-mESxQrPOY2lYjiRyxhaKRrQIrx2vPAE/edit#slide=id.g19ee6e206ef_0_6)
