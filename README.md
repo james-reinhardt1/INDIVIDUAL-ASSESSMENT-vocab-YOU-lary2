@@ -13,10 +13,10 @@ This app was built to allow users to view pre-rendered vocabulary cards, create 
 [dbdiagram](https://dbdiagram.io/d/638580b7c9abfc611175c94b)
 
 ## Link to deployed site
-[Netlify Launched Site]https://vocab-you-lary-project-2.netlify.app
+[Netlify Launched Site](https://vocab-you-lary-project-2.netlify.app)
 
 ## Link to milestones/issues
-[Milestones]https://github.com/james-reinhardt1/INDIVIDUAL-ASSESSMENT-vocab-YOU-lary2/milestones
+[Milestones](https://github.com/james-reinhardt1/INDIVIDUAL-ASSESSMENT-vocab-YOU-lary2/milestones)
 
 ## Description of the user and the problem we are solving for them
 - As a developer, we want to understand how Firebase and Firebase keys work with our code. In this app, the user is assigned a random generated firebase key that allows them to view the app specifically to their set up and how they want the app to look when it comes to creating cards, deleting, updating, and filtering. 
