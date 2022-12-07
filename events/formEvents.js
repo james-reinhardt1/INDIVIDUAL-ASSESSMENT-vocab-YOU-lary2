@@ -8,9 +8,7 @@ const formEvents = (user) => {
     if (e.target.id.includes('submit-word')) {
       const payload = {
         title: document.querySelector('#title').value,
-        // eslint-disable-next-line radix
-        languageId: parseInt(document.querySelector('#languageId').value), // id from selectLanguage function
-        language: document.querySelector('#select-language').value,
+        language: document.querySelector('#languageId').value,
         definition: document.querySelector('#definition').value,
         dateSubmitted: new Date(),
         uid: user.uid
@@ -34,7 +32,7 @@ const formEvents = (user) => {
         title: document.querySelector('#title').value,
         language: document.querySelector('#languageId').value,
         definition: document.querySelector('#definition').value,
-        favorite: document.querySelector('#favorite').checked,
+        // favorite: document.querySelector('#favorite').checked,
         firebaseKey
       };
 

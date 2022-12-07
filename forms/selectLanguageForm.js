@@ -11,8 +11,8 @@ const selectLanguage = (uid, languageId) => {
     languageArray.forEach((language) => {
       domString += `
           <option 
-            value="${language.id}"
-            ${languageId === parseInt(language.id) ? 'selected' : ''}>
+            value="${language.firebaseKey}"
+            ${languageId === (language.firebaseKey) ? 'selected' : ''}>
               ${language.language} 
           </option>`;
     });

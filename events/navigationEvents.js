@@ -1,7 +1,7 @@
-import { getWordsByLanguage } from '../api/languageData';
 import { getWords, filterWords } from '../api/wordsData';
 import viewWords from '../pages/viewWords';
 import { signOut } from '../utils/auth';
+import filterLanguage from '../shared/filter';
 
 // navigation events
 const navigationEvents = (user) => {
@@ -16,15 +16,15 @@ const navigationEvents = (user) => {
   // CHANGING ALL CALLS FROM NUMBERS TO USER.UID
   // THIS STOPPED MY BUTTONS FROM WORKING
   document.querySelector('#javascript').addEventListener('click', () => {
-    getWordsByLanguage(user.uid, 'javascript').then(viewWords);
+    filterLanguage(user.uid, 'javaScript');
   });
 
   document.querySelector('#html').addEventListener('click', () => {
-    getWordsByLanguage(user.uid, 'html').then(viewWords);
+    filterLanguage(user.uid, 'html');
   });
 
   document.querySelector('#css').addEventListener('click', () => {
-    getWordsByLanguage(user.uid, 'css').then(viewWords);
+    filterLanguage(user.uid, 'css');
   });
 
   document.querySelector('#favoriteWords').addEventListener('click', () => {
